@@ -1,0 +1,10 @@
+<div class="container">
+<%= simple_form_for(@task) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :details %>
+  <% if !f.object.new_record? %>
+    <%= f.input :completed, as: :boolean, checked_value: true, unchecked_value: false %>
+  <% end %>
+  <%= f.submit %>
+<% end %>
+</div>
